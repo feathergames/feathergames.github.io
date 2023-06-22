@@ -79,6 +79,12 @@
   </style>
   <title>Student Loan Calculator</title>
   <script>
+	
+	function toggleNotes(){
+		var x = document.getElementById("notes");
+		if(x.style.display === "none") x.style.display = "block";
+		else x.style.display = "none";
+	}
     
     function generatePaymentsTable(){
 		
@@ -182,11 +188,21 @@
         </tr>
         
         <tr>
-          <td colspan="4" style="text-align:center; padding-top:36px;"><button type="button" onclick="generatePaymentsTable()">Calculate</button></td>
+          <td colspan="4" style="text-align:center; padding-top:36px;"><button type="button" onclick="generatePaymentsTable()">Calculate</button>
+          <button type="button" onclick="toggleNotes()">Notes</button></td>
         </tr>
         
       </table>
     </form>
+    <div id="notes" style="display:none;">
+	  <p> 
+		  Disclaimer: Not financial advice. Use as a rough guide, and perform
+		  your own calculations for financial planning. Also note, interest
+		  is accrued from when you first take your student loan. Your 
+		  loan at start of term is likely to be more than what you were 
+		  given. 
+	  </p>
+	</div>
     <div id="output"></div>
   </div>
 </body>
