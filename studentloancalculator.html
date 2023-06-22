@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+	  :root{
+	--bg1: #EAEAEA;
+	--bg2: white;	
+	--dark1: #212738;
+	--dark2: #353F5A;
+	--light1: white;
+	--light2: blue;
+	
+	}
+
+	body {
+	font-family: sans-serif;
+	background-color: var(--bg1);
+	}
+
+	.main-container {
+		margin-left:auto;
+		margin-right:auto;
+		width: 35%;
+		min-width: 750px;
+		padding: 0px 25px 25px 25px;
+		margin-top: 35px;
+		border: 2px solid var(--dark1);
+		background-color: var(--bg2);
+	}
+
+	table {
+		margin-top: 15px;
+		margin-bottom: 25px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	td {
+		padding: 5px;
+		text-align: center;
+	}
+
+	th {
+		padding: 10px;
+		text-align: center;
+	}
+
+	input {
+		background: #373737;
+		color: white;
+		border: 0px;
+		border-radius: 4px;
+		padding: 6px;
+		width: 8ch;
+	}
+
+	button {
+		background: #809D83;
+		color: white;
+		border: 0px;
+		border-radius: 4px;
+		padding: 8px;
+	}
+
+	.form-table td {
+		text-align: right;
+	}
+
+
+	/* Hide the arrows on number boxes */
+	input[type="number"]::-webkit-outer-spin-button,
+	input[type="number"]::-webkit-inner-spin-button {
+		-webkit-appearance: none;
+		margin: 0;
+	}
+	input[type="number"] {
+		-moz-appearance: textfield;
+	}
+  </style>
+  <title>Student Loan Calculator</title>
+  <script>
+    
+    function generatePaymentsTable(){
+		
+		var startingLoan= parseFloat(document.getElementById('startingLoan').value);
+		var interestRate= parseFloat(document.getElementById('interestRate').value);
+		var repaymentRate= parseFloat(document.getElementById('repaymentRate').value) / 100; // division to convert to proportional
+		var salaryAllowance= parseFloat(document.getElementById('salaryAllowance').value);
+		var startingSalary= parseFloat(document.getElementById('startingSalary').value);
+		var endingSalary= parseFloat(document.getElementById('endingSalary').value);
+		var loanTerm = parseFloat(document.getElementById('loanTerm').value);
+		var salaryStep = (endingSalary-startingSalary) / (loanTerm-1);
+		var currentSalary = startingSalary;
+		
+		var interestMonthMultiplier = 1 + (interestRate / 100) / 12;
+		
+		var htmlTag = "<table><tr><th>Year</th><th>Remaining</th><th>Amount Paid</th><th>Interest Accrued</th>";
+		htmlTag += "<th>Salary</th></tr>";
+		var totalPaid = 0;
+		var totalInterestAccrued = 0;
+		var remainingLoan = startingLoan;
+		
+		var echostring = "";
+		
+		for(let y = 1; y < (loanTerm+1); y++){
+			
+			var payable = currentSalary - salaryAllowance;
+			var monthlyPayable = payable / 12;
+			var monthlyPayment = monthlyPayable * repaymentRate;
+			var annualPayment = 0;
+			var annualInterestAccrued = 0;
+			
+			for(let m = 0; m < 12; m++){
+				if(remainingLoan <= 0) {continue;}
+				
+				var start = remainingLoan;
+				remainingLoan *= interestMonthMultiplier;
+				var interestApplied = remainingLoan - start;
+				annualInterestAccrued += interestApplied;
+				
+				if (monthlyPayment > 0) {
+					remainingLoan -= monthlyPayment;
+					annualPayment += monthlyPayment;
+					if(remainingLoan < 0){
+						annualPayment += remainingLoan;
+						remainingLoan = 0;
+					}
+				}
+			}
+			
+			var yearTag = "<tr><td>" + y + "</td>";
+			yearTag += "<td>£" + remainingLoan.toFixed(2) + "</td>";
+			yearTag += "<td>£" + annualPayment.toFixed(2) + "</td>";
+			yearTag += "<td>£" + annualInterestAccrued.toFixed(2) + "</td>";
+			yearTag += "<td>£" + currentSalary.toFixed(2) + "</td></tr>\n"
+			htmlTag += yearTag;
+			
+			currentSalary += salaryStep;
+			totalPaid += annualPayment;
+			totalInterestAccrued += annualInterestAccrued;
+		}
+		
+		htmlTag += "<tr><td> </td></tr>"
+		htmlTag += "<tr><td><b>Total:</b></td>";
+		htmlTag += "<td></td><td>£"+totalPaid.toFixed(2)+"</td><td>£"+totalInterestAccrued.toFixed(2)+"<td>";
+		htmlTag += "</tr></table>";
+		output.innerHTML = htmlTag + echostring;
+	}
+	
+  </script>
+</head>
+<body>
+  <div class='main-container'>
+    <form>
+	  <table class="form-table">
+		<tr><th colspan="4"><h3>Student Loan Repayments Calculator</h3></th></tr>
+		  
+		<tr>
+          <td><label for="startingLoan">Total Loan:</label></td>
+          <td><input type="number" id="startingLoan" value="50000"></td>
+          <td><label for="interestRate">Interest Rate:</label></td>
+          <td><input type="number" id="interestRate" value="5.5"></td>
+        </tr>
+        
+        <tr>
+          <td><label for="salaryAllowance">Repayment-Free Allowance:</label></td>
+          <td><input type="number" id="salaryAllowance" value="27295"></td>
+	      <td><label for="repaymentRate">Repayment Percentage:</label></td>
+           <td><input type="number" id="repaymentRate" value="9"></td>
+        </tr>
+        
+        <tr>
+          <td><label for="startingSalary">Starting Salary:</label></td>
+          <td><input type="number" id="startingSalary" value="30000"></td>
+          <td><label for="endingSalary">Salary at End of Term:</label></td>
+          <td><input type="number" id="endingSalary" value="60000"></td>
+        </tr>
+        
+        <tr>
+	      <td><label for="loanTerm">Years:</label></td>
+          <td><input type="number" id="loanTerm" value="30"></td>
+        </tr>
+        
+        <tr>
+          <td colspan="4" style="text-align:center; padding-top:36px;"><button type="button" onclick="generatePaymentsTable()">Calculate</button></td>
+        </tr>
+        
+      </table>
+    </form>
+    <div id="output"></div>
+  </div>
+</body>
+</html>
