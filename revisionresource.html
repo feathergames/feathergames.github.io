@@ -5,142 +5,81 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Revision Resource</title>
 <style>
-    body {
-		font-family: sans-serif;
+	body {
+		text-align:center;
+		font-family:sans-serif;
+		margin: auto;
+		width: 100%;
+		max-width: 80ch;
+		margin: 20px auto;
+	}
+	table {
+		width: 100%;
+		margin: 20px auto;
+		border-collapse: collapse;
+	}
+	th, td {
+		border: 2px solid #d7e3fc;
+		padding: 10px;
 		text-align: center;
-		background: #e6f5ff;
-		margin: 0px;
-		padding: 0px;
-		height: 100%;
+		cursor: pointer;
 	}
-	
-	.box {
-		max-width: 80%;
-		width: fit-content;
-		margin-left: auto;
-		margin-right: auto;
-		height: 100%;
-		background: white;
-		padding: 12px;
+	th {
+		background-color: #d7e3fc;
 	}
-	
-    table {
-        width: 100%;
-        margin: auto;
-    }
-    th, td {
-        border: 1px solid #ddd;
-        padding: 10px;
-        text-align: center;
-        cursor: pointer;
-    }
-    th {
-        background-color: #f2f2f2;
-    }
-    /* Hidden cell content */
-    .hidden {
-        background-color: #ccc;
-        color: transparent;
-    }
-    .hidden:hover {
-        background-color: #bbb;
-    }
-    /* Button styling */
-    .reveal-btn {
-        padding: 8px 16px;
-        margin: 5px;
-        cursor: pointer;
+	#table-container td {
+		background-color: #edf2fa;
+		color: transparent;
+	}
+	#table-container td.hidden {
+		background-color: #edf2fa;
+		color: transparent;
+	}
+    #table-container td:not(.hidden) {
+        color: inherit;
     }
 </style>
 </head>
+
 <body>
-<div class="box">
 <h1>Revision Resource</h1>
-<h2>Show/Hide Table 1</h2>
-
-<div>
-<button class="reveal-btn" onclick="toggleColumn('table1', 0, true)">Show Column 1</button>
-<button class="reveal-btn" onclick="toggleColumn('table1', 1, true)">Show Column 2</button><br>
-<button class="reveal-btn" onclick="toggleColumn('table1', 0, false)">Hide Column 1</button>
-<button class="reveal-btn" onclick="toggleColumn('table1', 1, false)">Hide Column 2</button>
-</div>
-
-<table id="table1">
-    <thead>
-        <tr>
-            <th onclick="toggleColumn('table1', 0, true)">Column 1</th>
-            <th onclick="toggleColumn('table1', 1, true)">Column 2</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="hidden" onclick="revealCell(this)">Cell 1A</td>
-            <td class="hidden" onclick="revealCell(this)">Cell 2A</td>
-        </tr>
-        <tr>
-            <td class="hidden" onclick="revealCell(this)">Cell 1B</td>
-            <td class="hidden" onclick="revealCell(this)">Cell 2B</td>
-        </tr>
-        <tr>
-            <td class="hidden" onclick="revealCell(this)">Cell 1C</td>
-            <td class="hidden" onclick="revealCell(this)">Cell 2C</td>
-        </tr>
-    </tbody>
+<div id="table-container">
+<h3>Respiratory Infections</h3>
+<table>
+<thead><tr><th>Presentation</th><th>Dx/Common Pathogen</th><th>Management/Further Info</th></tr></thead>
+<tbody>
+<tr><td>3-6months. Up to 2 years age. Coryzal prodrome, then cough/tachypnoea/wheeze/crackles.</td><td>Bronchiolitis. RSV</td><td>Admit if: Apnoea, PO2 below 90, inadequate feed, significant resp distress</td></tr>
+<tr><td>Barking cough. Coryzal prodrome. Stridor.</td><td>Croup. Parainfluenza Virus</td><td>Mild: No stridor. Stridor/sternal/costal recession at rest. Severe: +agitation. Admit moderate and up. 0.15mg dexamethasone (any severity).</td></tr>
+<tr><td>Inspiratory whoop. Post tussive vomit. Acute cough >14 days. Apnoeic attacks.</td><td>Whooping cough. Bordatella Pertussis</td><td>Notifiable disease. Macrolide/co-trimoxazole.</td></tr>
+<tr><td>CAP</td><td>Strep pneumoniae most common. Also haemophilus influenzae. Staph aureus if following flu.</td><td></td></tr>
+<tr><td>Flu. Dry cough. Haemolytic anaemia. Erythema Multiforme.</td><td>mycoplasma pneumoniae</td><td>Atypical pneumonia. Typically nucleic acid amplification/serology/culture</td></tr>
+<tr><td>Cough. Deranged LFTs. Lymphopaenia. Hyponatraemia. Air conditioning systems.</td><td>Legionella</td><td>Atypical pneumonia. Urine antigen/PCR.</td></tr>
+<tr><td>Pneumonia in a HIV patient. Exertional dyspnoea, less chest signs.</td><td>Pneumocystis Jirovecii (fungus)</td><td>co-trimoxazole</td></tr>
+</tbody>
 </table>
-
-<h2>Show/Hide Table 2</h2>
-
-<!-- Reveal/Hide buttons specific to Table 2 -->
-<div>
-<button class="reveal-btn" onclick="toggleColumn('table2', 0, true)">Show Column 1</button>
-<button class="reveal-btn" onclick="toggleColumn('table2', 1, true)">Show Column 2</button><br>
-<button class="reveal-btn" onclick="toggleColumn('table2', 0, false)">Hide Column 1</button>
-<button class="reveal-btn" onclick="toggleColumn('table2', 1, false)">Hide Column 2</button>
 </div>
-
-<table id="table2">
-    <thead>
-        <tr>
-            <th onclick="toggleColumn('table2', 0, true)">Column 1</th>
-            <th onclick="toggleColumn('table2', 1, true)">Column 2</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td class="hidden" onclick="revealCell(this)">Cell 1A</td>
-            <td class="hidden" onclick="revealCell(this)">Cell 2A</td>
-        </tr>
-        <tr>
-            <td class="hidden" onclick="revealCell(this)">Cell 1B</td>
-            <td class="hidden" onclick="revealCell(this)">Cell 2B</td>
-        </tr>
-        <tr>
-            <td class="hidden" onclick="revealCell(this)">Cell 1C</td>
-            <td class="hidden" onclick="revealCell(this)">Cell 2C</td>
-        </tr>
-    </tbody>
-</table>
 
 <script>
-    // Function to show or hide an entire column within a specific table
-    function toggleColumn(tableId, colIndex, show) {
-        const table = document.getElementById(tableId);
-        const rows = table.querySelectorAll("tbody tr");
-        rows.forEach(row => {
-            const cell = row.cells[colIndex];
-            if (show) {
-                cell.classList.remove("hidden"); // Reveal column
-            } else {
-                cell.classList.add("hidden"); // Hide column
-            }
-        });
-    }
-
-    // Function to reveal a single cell
-    function revealCell(cell) {
-        cell.classList.remove("hidden");
-    }
+	document.addEventListener("DOMContentLoaded", () => {
+		const container = document.getElementById("table-container");
+		container.querySelectorAll("td").forEach(cell => cell.classList.add("hidden"));
+		container.querySelectorAll("th").forEach(header => {
+			header.onclick = () => {
+				const table = header.closest("table");
+				const colIndex = Array.from(header.parentNode.children).indexOf(header);
+				table.querySelectorAll("tbody tr").forEach(row => {
+					const cell = row.cells[colIndex];
+					cell.classList.toggle("hidden");
+				});
+			};
+		});
+		
+		container.querySelectorAll("td").forEach(cell => {
+			cell.onclick = () => {
+				cell.classList.toggle("hidden");
+			};
+		});
+	});
 </script>
-</div>
 </body>
 </html>
