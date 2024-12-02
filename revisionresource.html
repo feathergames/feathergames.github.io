@@ -13,6 +13,14 @@
 		margin: 20px auto;
 		font-size: min(2vw, 14px);
 	}
+	ul {
+		list-style-type: none;
+		margin: 10px;
+		padding: 10px;
+	}
+	a {
+		color: inherit;
+	}
 	table {
 		max-width: 100%;
 		margin: 20px auto;
@@ -44,47 +52,8 @@
 <body>
 <h1>Revision Resource</h1>
 <div id="table-container">
-	
-<h3>Acute Ophthalmology Presentations</h3>
-<table>
-<thead><tr><th>Presentation</th><th>Diagnosis</th><th>Management/Further Info</th></tr></thead>
-<tr><td>Eye pain worse on movement. Red desaturation. Reduced acuity. RAPD.</td><td>Optic neuritis</td><td>Associated with MS, diabetes, syphillis. Dx MRI brain and orbit ganolidium contrast. Mx high dose steroids.</td></tr>
-<tr><td>Red painful eye. Photophobia. Dendritic ulcer on fluoroscein stain.</td><td>Herpes Simplex Keratitis</td><td>Immediate ophthal referral. Topical aciclovir.</td></tr>
-<tr><td>Injury to eye. Pain, lacrimation, foreign body sensation</td><td>Corneal Abrasion</td><td>Topical chloramphenicol - topical abx to prevent secondary infection</td></tr>
-<tr><td>Red eye. Severe pain. Headache. Decreased acuity. Haloes. Semi dilated pupil. Hazy cornea.</td><td>Acute angle closure glaucoma</td><td>Eye drops (eg pilocarpine, timolol, others), IV acetazolamide. Definitive laser peripheral iridotomy.</td></tr>
-<tr><td>Red eye. Discomfort and pain. Small/irregular pupil. Photophobia. Blurred vision. Ciliary flush. Hypopyon (visible pus level)</td><td>Anterior uveitis</td><td>Associated with AnkySpond, UC, Crohn's, Behcets, sarcoidosis. Urgent ophthal RV, cycloplegic e.g atropine, steroid drops.</td></tr>
-<tr><td>Red eye. Painful. Post intraocular surgery.</td><td>Endophthalmitis</td><td>Urgent RV</td></tr>
-<tr><td>Red eye. Painful. Watering and photophobia. Non blanchable by phenylephrine drops.</td><td>Scleritis</td><td>Same day ophthal RV. NSAIDS. Associated with autoimmunity - RA, SLE, Sarcoidosis</td></tr>
-<tr><td>Red eye. Typically painless. Watering, mild photophobia. Blanchable by phenylephrine drops.</td><td>Episcleritis</td><td>Conservative Mx. Can use artificial tears. Associated with IBD, RA.</td></tr>
-<tr><td>Red eyes. Sore. purulent/serous discharge.</td><td>Infective conjunctivitis</td><td>Normally self limiting. Can give chloramphenicol drops.</td></tr>
-</table>
 
-<h3>Antimicrobial Side-Effects</h3>
-<table>
-<thead><tr><th>Antibiotic</th><th>Side Effects/Further info</th></tr></thead>
-<tr><td>Macrolides (-omycin)</td><td>Prolongs QT. GI side effects. P450 inhibitor, stop statins when used. Azithromycin can cause hearing loss and tinnitus</td></tr>
-<tr><td>Quinolones (-floxacin)</td><td>Lower seizure threshold. Tendon damage. Prolongs QT. Avoid in pregnant/breastfeeding/G6PD</td></tr>
-<tr><td>TB - Rifampicin</td><td>Potent liver enzyme inducer. Hepatitis, Orange secretions. Prevents transcription of DNA to mRNA.</td></tr>
-<tr><td>TB - Isoniazid</td><td>Peripheral neuropathy (add pyridoxine - vit B6). Hepatitis. Agranulocytosis. Inhibit mycolic acid synthesis.</td></tr>
-<tr><td>TB - Pyrazinamide</td><td>Hyperuricaemia, gout. Hepatitis. Turns into pyrazinoic acid which inhibits FAS (fatty acid synthas)</td></tr>
-<tr><td>TB - Ethambutol</td><td>Optic neuritis - check visual acuity before and during treatment. Inhibit arabinan synthesis.</td></tr>
-</table>
-
-<h3>Childhood Vaccinations</h3>
-<table>
-<thead><tr><th>Time</th><th>Vaccine</th></tr></thead>
-<tr><td>Birth</td><td>BCG if at risk</td></tr>
-<tr><td>2 months</td><td>6 in 1, oral rotavirus, Men B</td></tr>
-<tr><td>3 months</td><td>6 in 1, oral rotavirus, PCV</td></tr>
-<tr><td>4 months</td><td>6 in 1, Men B</td></tr>
-<tr><td>12 months</td><td>HiB/Men C, MMR, PCV, Men B</td></tr>
-<tr><td>3-4 years</td><td>4 in 1 pre-school booster, MMR</td></tr>
-<tr><td>12 years</td><td>HPV</td></tr>
-<tr><td>13-18 years</td><td>3 in 1 teenage booster, Men ACWY</td></tr>
-<tr><td>6 in 1 booster</td><td>Diphtheria, Tetanus, Polio, Whooping cough, HiB, Hep B</td></tr>
-<tr><td>4 in 1 pre school booster</td><td>Diphtheria, Tetanus, Polio, Whooping cough</td></tr>
-<tr><td>3 in 1 teenage booster</td><td>Tetanus, Diphtheria, Polio</td></tr>
-</table>
+<ul id="contents-list"></ul>
 
 <h2>Gastroenterology</h2>
 <h3>IBD - UC</h3>
@@ -110,6 +79,19 @@
 </table>
 
 <h2>Gynaecology, Obstetrics, Reproductive Health</h2>
+<h3>Antenatal Care Timetable</h3>
+10 visits for uncomplicated primip. 7 for uncomplicated subsquent pregnancies.
+<table>
+<thead><th>Time</th><th>Event</th></thead>
+<tr><td>8-12 weeks</td><td>Booking visit - general info. Booking bloods and urine culture to check asymptomatic bacteriurea (treat with nitro/amox/cefalex)</td></tr>
+<tr><td>10-13+6 weeks</td><td>Early scan to confirm dates and exclude multiple pregnancy</td></tr>
+<tr><td>11-13+6 weeks</td><td>Down syndrome screen. Positive for downs: Raised HCG, low PAPP-A, thickened nuchal translucency.</td></tr>
+<tr><td>18-20+6</td><td>Anomaly scan</td></tr>
+<tr><td>28 weeks</td><td>Second screen for red cell alloantibodies. First dose of anti-D for rhesus negative women. Anaemia screen, consider iron.</td></tr>
+<tr><td>34 weeks</td><td>Second dose of anti-D for rhesus negative women. Information on labour.</td></tr>
+<tr><td>36 weeks</td><td>Check presentation. Offer cephalic version if indicated. </td></tr>
+</table>
+
 <h3>Contraception</h3>
 <table>
 <thead><tr><th>Mode of Action</th><th>Method of contraception/Further info</th></tr></thead>
@@ -129,13 +111,30 @@
 </table>
 
 <h2>Paediatrics</h2>
+
+<h3>Childhood Vaccinations</h3>
+<table>
+<thead><tr><th>Time</th><th>Vaccine</th></tr></thead>
+<tr><td>Birth</td><td>BCG if at risk</td></tr>
+<tr><td>2 months</td><td>6 in 1, oral rotavirus, Men B</td></tr>
+<tr><td>3 months</td><td>6 in 1, oral rotavirus, PCV</td></tr>
+<tr><td>4 months</td><td>6 in 1, Men B</td></tr>
+<tr><td>12 months</td><td>HiB/Men C, MMR, PCV, Men B</td></tr>
+<tr><td>3-4 years</td><td>4 in 1 pre-school booster, MMR</td></tr>
+<tr><td>12 years</td><td>HPV</td></tr>
+<tr><td>13-18 years</td><td>3 in 1 teenage booster, Men ACWY</td></tr>
+<tr><td>6 in 1 booster</td><td>Diphtheria, Tetanus, Polio, Whooping cough, HiB, Hep B</td></tr>
+<tr><td>4 in 1 pre school booster</td><td>Diphtheria, Tetanus, Polio, Whooping cough</td></tr>
+<tr><td>3 in 1 teenage booster</td><td>Tetanus, Diphtheria, Polio</td></tr>
+</table>
+
 <h3>Inherited Syndromes</h3>
 <table>
 <thead><tr><th>Syndrome</th><th>Features and Associations</th></tr></thead>
-<tr><td>Down's</td><td>Upslanting palpebral fissure. Epicanthic folds. Brushfield spots on iris. Small low set ears. Round, flat face. Flat occiput. Single palmar crease. Sandal gap between 1st and 2nd toe. Duodenal atresia. Hirschsprung's disease. AVSD. VSD. ASD. Sub/infertility. ALL. Short stature.</td></tr>
+<tr><td>Down's</td><td>Trisomy 21. Upslanting palpebral fissure. Epicanthic folds. Brushfield spots on iris. Small low set ears. Round, flat face. Flat occiput. Single palmar crease. Sandal gap between 1st and 2nd toe. Duodenal atresia. Hirschsprung's disease. AVSD. VSD. ASD. Sub/infertility. ALL. Short stature.</td></tr>
 <tr><td>Turner's</td><td>Short stature. Shield chest. Wide spaced nipples. Webbed neck. Bicuspid aortic valve. Primary amenorrhoea. High arched palate.</td></tr>
-<tr><td>Patau</td><td>Microcephaly and small eyes. Cleft lip. Polydactyly.</td></tr>
-<tr><td>Edward's</td><td>Micrognathia. Low set ears. Rocker bottom feet. Overlapping of fingers.</td></tr>
+<tr><td>Patau</td><td>Microcephaly and small eyes. Cleft lip. Polydactyly. Trisomy 13.</td></tr>
+<tr><td>Edward's</td><td>Micrognathia. Low set ears. Rocker bottom feet. Overlapping of fingers. Trisomy 18.</td></tr>
 <tr><td>Noonan's</td><td>Webbed neck. Pectus excavatum. Short stature. Pulmonary stenosis.</td></tr>
 <tr><td>Fragile X</td><td>Learning difficulty. Macrocephaly. Macro-orchidism. Long face. Large ears.</td></tr>
 <tr><td>Prader-Willi</td><td>Hypotonia, hypogonadism, obesity.</td></tr>
@@ -154,11 +153,53 @@
 <tr><td>Flu-like. Dry cough. Haemolytic anaemia. Erythema Multiforme.</td><td>mycoplasma pneumoniae</td><td>Atypical pneumonia. Typically nucleic acid amplification/serology/culture</td></tr>
 <tr><td>Cough. Deranged LFTs. Lymphopaenia. Hyponatraemia. Air conditioning systems.</td><td>Legionella</td><td>Atypical pneumonia. Urine antigen/PCR.</td></tr>
 <tr><td>Pneumonia in a HIV patient. Exertional dyspnoea, less chest signs.</td><td>Pneumocystis Jirovecii (fungus)</td><td>co-trimoxazole</td></tr>
+<tr><td>Pneumonia in an alcoholic</td><td>Klebsiella</td><td></td></tr>
 </tbody>
 </table>
+
+<h2>Other</h2>
+
+<h3>Acute Ophthalmology Presentations</h3>
+<table>
+<thead><tr><th>Presentation</th><th>Diagnosis</th><th>Management/Further Info</th></tr></thead>
+<tr><td>Eye pain worse on movement. Red desaturation. Reduced acuity. RAPD.</td><td>Optic neuritis</td><td>Associated with MS, diabetes, syphillis. Dx MRI brain and orbit ganolidium contrast. Mx high dose steroids.</td></tr>
+<tr><td>Red painful eye. Photophobia. Dendritic ulcer on fluoroscein stain.</td><td>Herpes Simplex Keratitis</td><td>Immediate ophthal referral. Topical aciclovir.</td></tr>
+<tr><td>Injury to eye. Pain, lacrimation, foreign body sensation</td><td>Corneal Abrasion</td><td>Topical chloramphenicol - topical abx to prevent secondary infection</td></tr>
+<tr><td>Red eye. Severe pain. Headache. Decreased acuity. Haloes. Semi dilated pupil. Hazy cornea.</td><td>Acute angle closure glaucoma</td><td>Eye drops (eg pilocarpine, timolol, others), IV acetazolamide. Definitive laser peripheral iridotomy.</td></tr>
+<tr><td>Red eye. Discomfort and pain. Small/irregular pupil. Photophobia. Blurred vision. Ciliary flush. Hypopyon (visible pus level)</td><td>Anterior uveitis</td><td>Associated with AnkySpond, UC, Crohn's, Behcets, sarcoidosis. Urgent ophthal RV, cycloplegic e.g atropine, steroid drops.</td></tr>
+<tr><td>Red eye. Painful. Post intraocular surgery.</td><td>Endophthalmitis</td><td>Urgent RV</td></tr>
+<tr><td>Red eye. Painful. Watering and photophobia. Non blanchable by phenylephrine drops.</td><td>Scleritis</td><td>Same day ophthal RV. NSAIDS. Associated with autoimmunity - RA, SLE, Sarcoidosis</td></tr>
+<tr><td>Red eye. Typically painless. Watering, mild photophobia. Blanchable by phenylephrine drops.</td><td>Episcleritis</td><td>Conservative Mx. Can use artificial tears. Associated with IBD, RA.</td></tr>
+<tr><td>Red eyes. Sore. purulent/serous discharge.</td><td>Infective conjunctivitis</td><td>Normally self limiting. Can give chloramphenicol drops.</td></tr>
+</table>
+
+<h3>Antimicrobial Side-Effects</h3>
+<table>
+<thead><tr><th>Antibiotic</th><th>Side Effects/Further info</th></tr></thead>
+<tr><td>Macrolides (-omycin)</td><td>Prolongs QT. GI side effects. P450 inhibitor, stop statins when used. Azithromycin can cause hearing loss and tinnitus</td></tr>
+<tr><td>Quinolones (-floxacin)</td><td>Lower seizure threshold. Tendon damage. Prolongs QT. Avoid in pregnant/breastfeeding/G6PD</td></tr>
+<tr><td>TB - Rifampicin</td><td>Potent liver enzyme inducer. Hepatitis, Orange secretions. Prevents transcription of DNA to mRNA.</td></tr>
+<tr><td>TB - Isoniazid</td><td>Peripheral neuropathy (add pyridoxine - vit B6). Hepatitis. Agranulocytosis. Inhibit mycolic acid synthesis.</td></tr>
+<tr><td>TB - Pyrazinamide</td><td>Hyperuricaemia, gout. Hepatitis. Turns into pyrazinoic acid which inhibits FAS (fatty acid synthas)</td></tr>
+<tr><td>TB - Ethambutol</td><td>Optic neuritis - check visual acuity before and during treatment. Inhibit arabinan synthesis.</td></tr>
+</table>
+
 </div>
 
 <script>
+	const mainContainer = document.getElementById("table-container");
+	const contentsList = document.getElementById("contents-list");
+	const headings = mainContainer.querySelectorAll("h2");
+	headings.forEach((heading, index) => {
+		const id = heading.id || `heading-${index}`;
+		heading.id = id;
+		const listItem = document.createElement("li");
+		const link = document.createElement("a");
+		link.href = `#${id}`;
+		link.textContent = heading.textContent;
+		listItem.appendChild(link);
+		contentsList.appendChild(listItem);
+    });
 	document.addEventListener("DOMContentLoaded", () => {
 		const container = document.getElementById("table-container");
 		container.querySelectorAll("td").forEach(cell => cell.classList.add("hidden"));
